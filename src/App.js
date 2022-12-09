@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MyNavbar from './components/Navbar';
+import MyFooter from './components/Footer';
+import MySection from './components/Section';
 
-function App() {
+
+
+const App = () => {
+  const users = [{name: "Timur", lastName:"Salahudinov", age: 29, id: 1},  
+  {name: "Nursultan", lastName:"Djetybaev", age: 18, id: 2}, 
+  {name: "Kalybek", lastName:"Askhatov", age: 27, id: 3}, 
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+  <MyNavbar/>
+  <MyFooter />
+  <MySection users = {users}/>
     </div>
   );
-}
+};
 
 export default App;
